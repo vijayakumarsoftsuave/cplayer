@@ -9,4 +9,8 @@ class Home extends BaseController
         return $this->response->setJSON($data);
 	}
 
+	public function getUser() {
+        $userData =  $this->request->getBody();
+        return $this->response->setJSON(json_decode($userData)->data->unique_id);
+    }
 }
